@@ -1,4 +1,4 @@
-package homework.chapter3;
+package classwork.chapter3;
 
 public class BooleanExample {
     public static void main(String[] args) {
