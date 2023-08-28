@@ -1,4 +1,4 @@
-package java.chapter3;
+package work.chapter3;
 
 public class BooleanExample {
     public static void main(String[] args) {

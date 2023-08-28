@@ -1,4 +1,4 @@
-package java.chapter3;
+package work.chapter3;
 
 public class ArrayExample {
     public static void main(String[] args) {
