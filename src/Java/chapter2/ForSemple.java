@@ -1,4 +1,4 @@
-package classwork.chapter2;
+package Java.chapter2;
 
 public class ForSemple {
     public static void main(String[] args) {

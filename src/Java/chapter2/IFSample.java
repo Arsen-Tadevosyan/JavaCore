@@ -1,4 +1,4 @@
-package classwork.chapter2;
+package Java.chapter2;
 
 public class IFSample {
     public static void main(String[] args) {

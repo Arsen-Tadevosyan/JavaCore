@@ -1,4 +1,4 @@
-package classwork.chapter3;
+package Java.chapter3;
 
 public class CharExample {
     public static void main(String[] args) {
