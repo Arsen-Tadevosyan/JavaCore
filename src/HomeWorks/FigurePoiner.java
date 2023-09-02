@@ -1,4 +1,4 @@
-package HomeWork1;
+package HomeWorks;
 
 public class FigurePoiner {
     public static void main(String[] args) {
