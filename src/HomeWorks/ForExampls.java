@@ -10,10 +10,8 @@ public class ForExampls {
         System.out.println();
         System.out.println();
         //2
-        for (double i = 0; i < 100; i = i + 10) {
-            i %= 3;
-            System.out.print(i + " ");
-        }
+
     }
 }
+
 
