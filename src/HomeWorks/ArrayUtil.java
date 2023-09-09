@@ -8,18 +8,14 @@ public class ArrayUtil {
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
-        System.out.println();
         //2
         System.out.println(numbers[0]);
-        System.out.println();
         System.out.println();
         //3
         System.out.println(numbers.length - 1);
         System.out.println();
-        System.out.println();
         //4
         System.out.println(numbers.length);
-        System.out.println();
         System.out.println();
         //5
         int a = numbers[0];
@@ -28,26 +24,26 @@ public class ArrayUtil {
         }
         System.out.println(a);
         System.out.println();
-        System.out.println();
         //6
         int b = numbers[numbers.length / 2];
         if (2 > numbers.length / 2) System.out.println("cant print middle values.");
         else System.out.println(b);
         System.out.println();
-        System.out.println();
         //7
+        int evenCount = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0)
-                System.out.print(numbers[i] + " ");
+                evenCount++;
         }
-        System.out.println();
+        System.out.println(evenCount);
         System.out.println();
         //8
+        int oddCount = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 1)
-                System.out.print(numbers[i] + " ");
+                oddCount++;
         }
-        System.out.println();
+        System.out.println(oddCount);
         System.out.println();
         //9
         int sum = 0;
@@ -56,7 +52,6 @@ public class ArrayUtil {
 
         }
         System.out.println(sum);
-        System.out.println();
         System.out.println();
         //10
         for (int i = 0; i < numbers.length; i++) {
