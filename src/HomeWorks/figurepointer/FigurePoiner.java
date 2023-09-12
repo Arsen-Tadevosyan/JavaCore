@@ -1,26 +1,25 @@
-package HomeWorks;
+package HomeWorks.figurepointer;
 
 public class FigurePoiner {
-    public static void main(String[] args) {
-        //1
-        for (int i = 0; i <= 5; i++) {
+
+    void figureone(int n){
+        for (int i = 0; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
-        //2
+    }
+
+    void figureTwo(){
         for (int i = 5; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
-        //3
+    }
+    void figureThree (){
         for (int i = 0; i <= 5; i++) {
             for (int j = 5; j > i; j--) {
                 System.out.print("  ");
@@ -30,9 +29,8 @@ public class FigurePoiner {
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
-        //4
+    }
+    void  firgurefour(){
         for (int i = 0; i <= 5; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print("  ");
@@ -42,9 +40,8 @@ public class FigurePoiner {
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println();
-        //5
+    }
+    void figurefive(){
         for (int i = 0; i <= 5; i++) {
             for (int j = 5; j > i; j--) {
                 System.out.print(" ");
@@ -63,6 +60,5 @@ public class FigurePoiner {
             }
             System.out.println();
         }
-
     }
 }
