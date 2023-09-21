@@ -3,12 +3,16 @@ package MyPrograms;
 public class user {
     String name;
     String surename;
+    String profession;
+   String salary;
     int age;
 
-    user(String na, String su, int ag) {
+    user(String na, String su, String pr, int ag, String sl) {
         name = na;
         surename = su;
+        profession = pr;
         age = ag;
+        salary = sl;
     }
 
     void days(int a) {
@@ -19,7 +23,9 @@ public class user {
 
     void months(int a) {
         a = age * 12;
-        System.out.println("ամսեկան. " + a);
+        System.out.println("ամսական. " + a);
+
+
     }
 
 }
