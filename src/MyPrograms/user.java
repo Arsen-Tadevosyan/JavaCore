@@ -14,12 +14,12 @@ public class user {
     void days(int a) {
         a = age;
         int d = age * 365;
-        System.out.println("օրական " + d);
+        System.out.println("օրական. " + d);
     }
 
     void months(int a) {
         a = age * 12;
-        System.out.println("ամսեկան " + a);
+        System.out.println("ամսեկան. " + a);
     }
 
 }
