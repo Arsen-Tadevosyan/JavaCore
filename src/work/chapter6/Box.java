@@ -11,6 +11,16 @@ public class Box {
         depth = d;
     }
 
+    Box() {
+        width = -1;
+        depth = -1;
+        height = -1;
+    }
+
+    Box(double len) {
+        width = height = depth = len;
+    }
+
     double volume() {
         return width * height * depth;
     }
