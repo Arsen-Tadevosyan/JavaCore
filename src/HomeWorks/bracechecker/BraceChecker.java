@@ -1,42 +1,55 @@
 package HomeWorks.bracechecker;
 
+import work.chapter6.stack.Stack;
+
 public class BraceChecker {
 
-    private String text;
-    char s;
-    char s1;
+    private String Text;
 
-    public BraceChecker(String tx, char si, char si1) {
-        text = tx;
-        s = si;
-        s1 = si1;
-
+    BraceChecker(String T) {
+        Text = T;
     }
-
 
     public void check() {
-        int a = 0;
-        int i;
-        for (i = 0; i < text.length(); i++) {
-            char size;
-            char b = text.charAt(i);
-            if (b == s) {
-                size = text.charAt(i);
-                for (int j = i; j < text.length(); j++) {
-                    if (text.charAt(j) == s1) {
-                        System.out.println("not problem");
-                        a++;
-                        break;
+        Stack stack = new Stack();
+        char l;
+        for (int i = 0; i < Text.length(); i++) {
+            char o = Text.charAt(i);
+            switch (o) {
+                case '[':
+                case '{':
+                case '(':
+                    stack.push(o);
+                    break;
+                case '}':
+                    l = (char) stack.pop();
+                    if (l == 0) {
+                        System.out.println("Closed but not opened ");
+                    } else if (l != '{') {
+                        System.out.println("} Closed but opened " + l);
                     }
-                }
+                    break;
+                case ')':
+                    l = (char) stack.pop();
+                    if (l == 0) {
+                        System.out.println("Closed but not opened ");
+                    } else if (l != '(') {
+                        System.out.println(") Closed but opened " + l);
+                    }
+                    break;
+                case ']':
+                    l = (char) stack.pop();
+                    if (l == 0) {
+                        System.out.println("Closed but not opened ");
+                    } else if (l != '[') {
+                        System.out.println("] Closed but opened " + l);
+                    }
+                    break;
             }
         }
-        if (a == 0) {
-            System.out.println(s + "opened not closed" + s1);
+        while ((l = (char) stack.pop()) != 0) {
+            System.out.println("opened " + l + " but not closed");
         }
 
-
     }
-
 }
-

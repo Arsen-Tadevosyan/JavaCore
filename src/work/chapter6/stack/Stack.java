@@ -5,11 +5,11 @@ public class Stack {
     int[] array = new int[10];
     int index;
 
-    Stack() {
+    public Stack() {
         index = -1;
     }
 
-    void push(int item) {
+  public   void push(int item) {
         if (index == 9) {
             System.out.println("Stack is full");
         } else {
@@ -17,9 +17,8 @@ public class Stack {
         }
     }
 
-    int pop() {
+  public   int pop() {
         if (index < 0) {
-            System.out.println("Stack is empty");
             return 0;
         } else
             return array[index--];
