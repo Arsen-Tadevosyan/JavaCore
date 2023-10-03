@@ -36,9 +36,9 @@ public class EmpoyeeDemo {
                     System.out.println(" Empoyee created!");
                     break;
                 case "2":
-                    System.out.println("----------------");
+                    System.out.println("------------------");
                     empoyeeStorage.print();
-                    System.out.println("----------------");
+                    System.out.println("------------------");
                     break;
                 case "3":
                     System.out.println("please input keyword");
