@@ -89,6 +89,11 @@ public class DynamicArray {
         }
         return -1;
     }
+
+    int getSize(){
+        return size;
+    }
+
 }
 
 

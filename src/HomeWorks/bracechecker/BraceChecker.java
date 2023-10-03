@@ -24,31 +24,32 @@ public class BraceChecker {
                 case '}':
                     l = (char) stack.pop();
                     if (l == 0) {
-                        System.out.println("Closed but not opened ");
+                        System.out.println("Error. " + o + " closed, but not opened. at " + i);
                     } else if (l != '{') {
-                        System.out.println("} Closed but opened " + l);
+                        System.out.println("Error. " + o + " closed, but opened " + l + " at " + i);
                     }
                     break;
                 case ')':
                     l = (char) stack.pop();
                     if (l == 0) {
-                        System.out.println("Closed but not opened ");
+                        System.out.println("Error. " + o + " closed, but not opened. at " + i);
                     } else if (l != '(') {
-                        System.out.println(") Closed but opened " + l);
+                        System.out.println("Error. " + o + " closed, but opened " + l + " at " + i);
                     }
                     break;
                 case ']':
                     l = (char) stack.pop();
                     if (l == 0) {
-                        System.out.println("Closed but not opened ");
+                        System.out.println("Error. " + o + " closed, but not opened. at " + i);
                     } else if (l != '[') {
-                        System.out.println("] Closed but opened " + l);
+                        System.out.println("Error. " + o + " closed, but opened " + l + " at " + i);
                     }
                     break;
             }
         }
-        while ((l = (char) stack.pop()) != 0) {
-            System.out.println("opened " + l + " but not closed");
+
+        while (stack.getIndex() != -1) {
+            System.out.println("Error. opened " + (char)stack.pop() + " but not closed");
         }
 
     }
