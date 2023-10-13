@@ -88,6 +88,7 @@ public class EmpoyeeManagementMain {
         System.out.println("Employee updated!");
     }
 
+
     private static void changeCompany() {
         System.out.println("please input company id");
         String companyId = scanner.nextLine();
