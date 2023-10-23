@@ -1,4 +1,4 @@
-package homework.empoyeemanagement;
+package homework.empoyeemanagement.model;
 
 import java.util.Objects;
 

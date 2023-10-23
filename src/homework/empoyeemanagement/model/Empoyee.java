@@ -1,4 +1,8 @@
-package homework.empoyeemanagement;
+package homework.empoyeemanagement.model;
+
+import homework.empoyeemanagement.util.DateUtil;
+
+import java.util.Date;
 
 public class Empoyee {
 
@@ -9,8 +13,10 @@ public class Empoyee {
     private double salary;
     private String position;
     private Company company;
+    private Date dateOfBirthay;
+    private Date registerDate;
 
-    public Empoyee(String id, String name, String surname, String phone, double salary, String position, Company company) {
+    public Empoyee(String id, String name, String surname, String phone, double salary, String position, Company company, Date dateOfBirthay, Date registerDate) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -18,6 +24,24 @@ public class Empoyee {
         this.salary = salary;
         this.position = position;
         this.company = company;
+        this.dateOfBirthay = dateOfBirthay;
+        this.registerDate = registerDate;
+    }
+
+    public Date getDateOfBirthay() {
+        return dateOfBirthay;
+    }
+
+    public void setDateOfBirthay(Date dateOfBirthay) {
+        this.dateOfBirthay = dateOfBirthay;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 
     public Empoyee() {
@@ -89,6 +113,8 @@ public class Empoyee {
                 ", salary=" + salary +
                 ", position='" + position + '\'' +
                 ", company=" + company +
+                ", dateOfBirthay=" + DateUtil.dateToString(dateOfBirthay) +
+                ", registerDate=" + DateUtil.dateToString(registerDate) +
                 '}';
     }
 }
