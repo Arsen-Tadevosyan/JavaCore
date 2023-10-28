@@ -2,12 +2,23 @@ package chapters.chapter10;
 
 public class MyExceptionExample {
     public static void main(String[] args) {
-        int a = 10;
+
+        String name = "poxos7";
+        String s = null;
         try {
-            System.out.println(a / 0);
-        }catch (ArithmeticException e){
-            System.out.println("");
+            s = StringUtil.checkString(name);
+            System.out.println(s);
+        } catch (Exception e) {
+            System.err.println(e);
         }
+
+
+//        int a = 10;
+//        try {
+//            System.out.println(a / 0);
+//        } catch (ArithmeticException e) {
+//            System.out.println("");
+//        }
 
 
 //        int[] numbers = {1, 3, 5};
@@ -19,3 +30,5 @@ public class MyExceptionExample {
 //        }
     }
 }
+
+

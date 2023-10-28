@@ -1,50 +1,58 @@
 package homework.empoyeemanagement;
 
+import homework.empoyeemanagement.model.Company;
+import homework.empoyeemanagement.model.Empoyee;
+import homework.empoyeemanagement.storage.CompanyStorage;
+import homework.empoyeemanagement.storage.EmpoyeeStorage;
+import homework.empoyeemanagement.util.DateUtil;
+
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Scanner;
 
-public class EmpoyeeManagementMain {
+public class EmpoyeeManagementMain implements Command {
     private static Scanner scanner = new Scanner(System.in);
     private static EmpoyeeStorage empoyeeStorage = new EmpoyeeStorage();
     private static CompanyStorage companyStorage = new CompanyStorage();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         boolean isRun = true;
 
         while (isRun) {
-            printCommands();
+            Command.printCommands();
             String command = scanner.nextLine();
             switch (command) {
-                case "0":
+                case EXIT:
                     isRun = false;
                     break;
-                case "1":
+                case ADD_COMPAMY:
                     addCompany();
                     break;
-                case "2":
+                case ADD_EMPLOYEE:
                     addEmployee();
                     break;
-                case "3":
+                case PRINT_ALL_COMPANIES:
                     companyStorage.print();
                     break;
-                case "4":
+                case PRINT_ALL_EMPLOYEES:
                     empoyeeStorage.print();
                     break;
-                case "5":
+                case SEARCH_EMPLYOEE_BY_ID:
                     searchEmployeeById();
                     break;
-                case "6":
+                case SEARCH_EMPLYOEE_BY_COMPANY:
                     searchEmployeeByCompany();
                     break;
-                case "7":
+                case DELETE_COMPANY:
                     deleteCompany();
                     break;
-                case "8":
+                case DELETE_EMPLOYEE:
                     deleteEmployee();
                     break;
-                case "9":
+                case CHANGE_COMPANY:
                     changeCompany();
                     break;
-                case "10":
+                case CHANGE_EMPLOYEE:
                     changeEmployee();
                     break;
                 default:
@@ -87,7 +95,6 @@ public class EmpoyeeManagementMain {
         employeeFromStorage.setPhone(emoloyeePhone);
         System.out.println("Employee updated!");
     }
-
 
     private static void changeCompany() {
         System.out.println("please input company id");
@@ -167,7 +174,7 @@ public class EmpoyeeManagementMain {
         }
     }
 
-    private static void addEmployee() {
+    private static void addEmployee() throws ParseException {
         System.out.println("please choose company id");
         companyStorage.print();
         String companyId = scanner.nextLine();
@@ -193,7 +200,12 @@ public class EmpoyeeManagementMain {
         String emoloyeePosition = scanner.nextLine();
         System.out.println("please input employee  salary");
         double emoloyeesalary = Double.parseDouble(scanner.nextLine());
-        Empoyee empoyee = new Empoyee(employeeId, employeeName, emoloyeeSurname, emoloyeePhone, emoloyeesalary, emoloyeePosition, companyFromStorage);
+        System.out.println("please input employee date of birthay  (dd-MM-yyyy)");
+        String dateOfBirthayStr = scanner.nextLine();
+        Date dateOfBirthay = DateUtil.StringToDate(dateOfBirthayStr);
+        Date registerDate = new Date();
+        Empoyee empoyee = new Empoyee(employeeId, employeeName, emoloyeeSurname, emoloyeePhone,
+                emoloyeesalary, emoloyeePosition, companyFromStorage, dateOfBirthay, registerDate);
         empoyeeStorage.add(empoyee);
         System.out.println("Employee registred!");
     }
@@ -213,22 +225,5 @@ public class EmpoyeeManagementMain {
         Company company = new Company(companyId, companyName, companyAddress);
         companyStorage.add(company);
         System.out.println("company resgistred");
-    }
-
-
-    private static void printCommands() {
-
-        System.out.println("Please input 0 for EXIT");
-        System.out.println("Plesae input 1 for ADD_COMPANY");
-        System.out.println("Plesae input 2 for ADD_EMPLOYEE");
-        System.out.println("Plesae input 3 for PRINT_ALL_COMPANIES");
-        System.out.println("Plesae input 4 for PRINT_ALL_EMPLOYEES");
-        System.out.println("Plesae input 5 for SEARCH_EMPLYOEE_BY_ID");
-        System.out.println("Plesae input 6 for SEARCH_EMPLYOEE_BY_COMPANY");
-        System.out.println("Plesae input 7 for DELETE_COMPANY");
-        System.out.println("Plesae input 8 for DELETE_EMPLOYEE");
-        System.out.println("Plesae input 9 for CHANGE_COMPANY");
-        System.out.println("Plesae input 10 for CHANGE_EMPLOYEE");
-
     }
 }
