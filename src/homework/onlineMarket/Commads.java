@@ -3,6 +3,7 @@ package homework.onlineMarket;
 public interface Commads {
     String LOGIN = "0";
     String REGISTER = "1";
+    String EXIT = "2";
 
 
     String LOGOUT = "0";
@@ -20,12 +21,12 @@ public interface Commads {
     String PRINT_MY_ORDERs = "3";
     String CHANEL_ORDER_BY_ID = "4";
 
-    static void printCommandsByUser(){
-        System.out.println("please input "+ LOGOUt+ " for LOGOUt");
-        System.out.println("please input "+ PRINT_MY_ORDERS+ " for PRINT_MY_ORDERS");
-        System.out.println("please input "+ BUY_PRODUCT+ " for BUY_PRODUCT");
-        System.out.println("please input "+ PRINT_MY_ORDERs+ " for PRINT_MY_ORDERs");
-        System.out.println("please input "+ CHANEL_ORDER_BY_ID+ " for CHANEL_ORDER_BY_ID");
+    static void printCommandsByUser() {
+        System.out.println("please input " + LOGOUt + " for LOGOUt");
+        System.out.println("please input " + PRINT_MY_ORDERS + " for PRINT_MY_ORDERS");
+        System.out.println("please input " + BUY_PRODUCT + " for BUY_PRODUCT");
+        System.out.println("please input " + PRINT_MY_ORDERs + " for PRINT_MY_ORDERs");
+        System.out.println("please input " + CHANEL_ORDER_BY_ID + " for CHANEL_ORDER_BY_ID");
     }
 
     static void printCommandsByAdmin() {
@@ -41,5 +42,7 @@ public interface Commads {
     static void printFirstCommand() {
         System.out.println("please input " + LOGIN + " for LOGIN");
         System.out.println("please input " + REGISTER + " for REGISTER");
+        System.out.println("please input " + EXIT + " for EXIT");
+
     }
 }
