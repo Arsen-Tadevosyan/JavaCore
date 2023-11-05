@@ -35,7 +35,7 @@ public class OnlineMarketMain implements Commads {
                     isRun = false;
                     break;
                 default:
-                    System.out.println("invalid command. try again");
+                    System.out.println("invalid command . try again");
             }
         }
     }
