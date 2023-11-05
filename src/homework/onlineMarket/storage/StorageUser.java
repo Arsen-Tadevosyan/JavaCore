@@ -1,5 +1,6 @@
 package homework.onlineMarket.storage;
 
+import homework.onlineMarket.enums.EnumForUser;
 import homework.onlineMarket.model.Order;
 import homework.onlineMarket.model.User;
 
@@ -42,5 +43,13 @@ public class StorageUser {
             }
         }
         return null;
+    }
+
+    public void printOnlyUsers() {
+        for (int i = 0; i < size; i++) {
+            if (users[i].getType().equals(EnumForUser.USER)) {
+                System.out.println(users[i]);
+            }
+        }
     }
 }

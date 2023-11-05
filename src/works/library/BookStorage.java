@@ -1,6 +1,5 @@
 package works.library;
 
-import static jdk.nashorn.internal.objects.NativeJava.extend;
 
 public class BookStorage {
 
