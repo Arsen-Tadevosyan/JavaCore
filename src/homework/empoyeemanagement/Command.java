@@ -22,7 +22,7 @@ public interface Command {
 
         System.out.println("Please input " + EXIT + " for EXIT");
         System.out.println("Plesae input " + ADD_COMPAMY + " for ADD_COMPANY");
-        System.out.println("Plesae input " + ADD_COMPAMY + " for ADD_EMPLOYEE");
+        System.out.println("Plesae input " + ADD_EMPLOYEE + " for ADD_EMPLOYEE");
         System.out.println("Plesae input " + PRINT_ALL_COMPANIES + " for PRINT_ALL_COMPANIES");
         System.out.println("Plesae input " + PRINT_ALL_EMPLOYEES + " for PRINT_ALL_EMPLOYEES");
         System.out.println("Plesae input " + SEARCH_EMPLYOEE_BY_ID + " for SEARCH_EMPLYOEE_BY_ID");
