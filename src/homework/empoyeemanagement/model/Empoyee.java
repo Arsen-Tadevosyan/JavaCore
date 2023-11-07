@@ -2,9 +2,10 @@ package homework.empoyeemanagement.model;
 
 import homework.empoyeemanagement.util.DateUtil;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Empoyee {
+public class Empoyee implements Serializable {
 
     private String id;
     private String name;

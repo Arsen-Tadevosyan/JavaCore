@@ -6,6 +6,7 @@ import homework.empoyeemanagement.model.Empoyee;
 import homework.empoyeemanagement.storage.CompanyStorage;
 import homework.empoyeemanagement.storage.EmpoyeeStorage;
 import homework.empoyeemanagement.util.DateUtil;
+import homework.empoyeemanagement.util.StorageSerializeUtil;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -14,8 +15,9 @@ import java.util.Scanner;
 
 public class EmpoyeeManagementMain implements Command {
     private static Scanner scanner = new Scanner(System.in);
-    private static EmpoyeeStorage empoyeeStorage = new EmpoyeeStorage();
-    private static CompanyStorage companyStorage = new CompanyStorage();
+    private static EmpoyeeStorage empoyeeStorage = StorageSerializeUtil.deserializeEmployeeStorage();
+    private static CompanyStorage companyStorage = StorageSerializeUtil.deserializeCompanyStorage();
+
 
     public static void main(String[] args) throws ParseException {
         boolean isRun = true;
@@ -174,6 +176,7 @@ public class EmpoyeeManagementMain implements Command {
             employeeFromStorage.setSalary(emoloyeesalary);
             employeeFromStorage.setPhone(emoloyeePhone);
             System.out.println("Employee updated!");
+            StorageSerializeUtil.serializeEmployeeStorage(empoyeeStorage);
         } catch (EmployeeNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
@@ -197,6 +200,7 @@ public class EmpoyeeManagementMain implements Command {
         companyFromStorage.setName(companyName);
         companyFromStorage.setAddress(companyAddress);
         System.out.println("company updated!");
+        StorageSerializeUtil.serializeCompanyStorage(companyStorage);
     }
 
     private static void deleteEmployee() {
@@ -219,6 +223,7 @@ public class EmpoyeeManagementMain implements Command {
                 return;
             }
             empoyeeStorage.deleteById(employeeId);
+            StorageSerializeUtil.serializeEmployeeStorage(empoyeeStorage);
         } catch (EmployeeNotFoundException e) {
             System.out.println(e.getMessage());
         }
@@ -234,6 +239,7 @@ public class EmpoyeeManagementMain implements Command {
             return;
         }
         companyStorage.deleteById(companyId);
+        StorageSerializeUtil.serializeCompanyStorage(companyStorage);
     }
 
     private static void searchEmployeeByCompany() {
@@ -295,6 +301,7 @@ public class EmpoyeeManagementMain implements Command {
             Empoyee empoyee = new Empoyee(employeeId, employeeName, emoloyeeSurname, emoloyeePhone,
                     emoloyeesalary, emoloyeePosition, companyFromStorage, dateOfBirthay, registerDate);
             empoyeeStorage.add(empoyee);
+            StorageSerializeUtil.serializeEmployeeStorage(empoyeeStorage);
             System.out.println("Employee registred!");
         } else {
             System.out.println(" employee already exists");
@@ -315,6 +322,7 @@ public class EmpoyeeManagementMain implements Command {
         String companyAddress = scanner.nextLine();
         Company company = new Company(companyId, companyName, companyAddress);
         companyStorage.add(company);
+        StorageSerializeUtil.serializeCompanyStorage(companyStorage);
         System.out.println("company resgistred");
     }
 }

@@ -4,7 +4,9 @@ import homework.empoyeemanagement.exception.EmployeeNotFoundException;
 import homework.empoyeemanagement.model.Company;
 import homework.empoyeemanagement.model.Empoyee;
 
-public class EmpoyeeStorage {
+import java.io.Serializable;
+
+public class EmpoyeeStorage implements Serializable {
     private Empoyee[] empoyees = new Empoyee[10];
     private int size;
 

@@ -2,7 +2,9 @@ package homework.empoyeemanagement.storage;
 
 import homework.empoyeemanagement.model.Company;
 
-public class CompanyStorage {
+import java.io.Serializable;
+
+public class CompanyStorage implements Serializable {
     private Company[] companies = new Company[10];
     private int size;
 

@@ -1,8 +1,9 @@
 package homework.empoyeemanagement.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Company {
+public class Company implements Serializable {
 
     private String id;
     private String name;
