@@ -26,6 +26,10 @@ public class StorageSerializeUtil {
     }
 
     public static CompanyStorage deserializeCompanyStorage() {
+        File file = new File(COMPANY_FILE_PATH);
+        if (!file.exists()) {
+            return new CompanyStorage();
+        }
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(COMPANY_FILE_PATH))) {
             Object o = inputStream.readObject();
             if (o instanceof CompanyStorage companyStorage) {
@@ -38,6 +42,10 @@ public class StorageSerializeUtil {
     }
 
     public static EmpoyeeStorage deserializeEmployeeStorage() {
+        File file = new File(EMPLOYEE_FILE_PATH);
+        if (!file.exists()) {
+            return new EmpoyeeStorage();
+        }
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(EMPLOYEE_FILE_PATH))) {
             Object o = inputStream.readObject();
             if (o instanceof EmpoyeeStorage empoyeeStorage) {
