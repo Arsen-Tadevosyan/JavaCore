@@ -27,13 +27,13 @@ public interface Commands {
     }
 
     static void printAdminCommands() {
-        System.out.println("Please input " + LOGOUT + " for LOGOUT");
-        System.out.println("Please input " + ADD_PRODUCT + " for ADD_PRODUCT");
-        System.out.println("Please input " + REMOVE_PRODUCT_BY_ID + " for REMOVE_PRODUCT_BY_ID");
-        System.out.println("Please input " + PRINT_PRODUCTS + " for PRINT_PRODUCTS");
-        System.out.println("Please input " + PRINT_USERS + " for PRINT_USERS");
-        System.out.println("Please input " + PRINT_ORDERS + " for PRINT_ORDERS");
-        System.out.println("Please input " + CHANGE_ORDER_STATUS_BY_ID + " for CHANGE_ORDER_STATUS_BY_ID");
+        System.out.println("Please input " + LOGOUT + " for LOGOUT ");
+        System.out.println("Please input " + ADD_PRODUCT + " for ADD_PRODUCT ");
+        System.out.println("Please input " + REMOVE_PRODUCT_BY_ID + " for REMOVE_PRODUCT_BY_ID ");
+        System.out.println("Please input " + PRINT_PRODUCTS + " for PRINT_PRODUCTS ");
+        System.out.println("Please input " + PRINT_USERS + " for PRINT_USERS ");
+        System.out.println("Please input " + PRINT_ORDERS + " for PRINT_ORDERS ");
+        System.out.println("Please input " + CHANGE_ORDER_STATUS_BY_ID + " for CHANGE_ORDER_STATUS_BY_ID" );
     }
 
     static void printUserCommands() {
