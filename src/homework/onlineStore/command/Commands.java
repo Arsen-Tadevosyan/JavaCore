@@ -22,7 +22,7 @@ public interface Commands {
 
     static void printMainCommands() {
         System.out.println("Please input " + EXIT + " for EXIT");
-        System.out.println("Please input " + LOGIN + " for LOGIN");
+        System.out.println("Please input " + LOGIN + " for  LOGIN");
         System.out.println("Please input " + REGISTER + " for REGISTER");
     }
 

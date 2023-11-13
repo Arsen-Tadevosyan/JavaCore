@@ -42,7 +42,7 @@ public class OnlineStoreMain implements Commands {
                     register();
                     break;
                 default:
-                    System.out.println("Unknown Command!  ");
+                    System.out.println("Unknown Command!");
             }
         }
     }
