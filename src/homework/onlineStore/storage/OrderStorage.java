@@ -5,47 +5,34 @@ import homework.onlineStore.model.User;
 import homework.onlineStore.util.StorageSerializeUtil;
 
 import java.io.Serializable;
+import java.util.*;
 
 public class OrderStorage implements Serializable {
 
-    private Order[] orders = new Order[10];
-
-    private int size;
+    private List<Order> orders = new LinkedList<>();
+    Map<String, Order> MapId = new HashMap<>();
+    Map<User, Order> MapUser = new HashMap<>();
 
     public void add(Order order) {
-        if (orders.length == size) {
-            extend();
-        }
-        orders[size++] = order;
+        orders.add(order);
+        MapId.put(order.getId(), order);
+        MapUser.put(order.getUser(),order);
         StorageSerializeUtil.serializeOrderStorage(this);
     }
 
     public void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(orders[i]);
+        for (Order order : orders) {
+            System.out.println(order);
         }
     }
 
-    private void extend() {
-        Order[] tmp = new Order[orders.length + 10];
-        System.arraycopy(orders, 0, tmp, 0, orders.length);
-        orders = tmp;
-    }
 
     public Order getById(String id) {
-        for (int i = 0; i < size; i++) {
-            if (orders[i].getId().equals(id)) {
-                return orders[i];
-            }
-        }
-        return null;
+        Order order = MapId.get(id);
+        return order;
     }
 
     public void printByUser(User currentUser) {
-        for (int i = 0; i < size; i++) {
-            if (orders[i].getUser().equals(currentUser)) {
-                System.out.println(orders[i]);
-            }
-        }
+        System.out.println(MapUser.get(currentUser));
     }
 }

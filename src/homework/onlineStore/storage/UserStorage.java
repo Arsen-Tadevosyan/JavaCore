@@ -5,47 +5,37 @@ import homework.onlineStore.model.enums.UserType;
 import homework.onlineStore.util.StorageSerializeUtil;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class UserStorage implements Serializable {
 
-    private User[] users = new User[10];
-
-    private int size;
+    private List<User> users = new ArrayList<>();
+    Map<String, User> MapEmail = new HashMap<>();
+    Map<UserType, User> MapType = new HashMap<>();
 
     public void add(User user) {
-        if (users.length == size) {
-            extend();
-        }
-        users[size++] = user;
+        users.add(user);
+        MapEmail.put(user.getEmail(), user);
+        MapType.put(user.getUserType(), user);
         StorageSerializeUtil.serializeUserStorage(this);
     }
 
     public void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(users[i]);
+        for (User user : users) {
+            System.out.println(user);
         }
     }
 
-    private void extend() {
-        User[] tmp = new User[users.length + 10];
-        System.arraycopy(users, 0, tmp, 0, users.length);
-        users = tmp;
-    }
 
     public User getByEmail(String email) {
-        for (int i = 0; i < size; i++) {
-            if (users[i].getEmail().equals(email)) {
-                return users[i];
-            }
-        }
-        return null;
+        User user = MapEmail.get(email);
+        return user;
     }
 
     public void printByType(UserType userType) {
-        for (int i = 0; i < size; i++) {
-            if (users[i].getUserType() == userType) {
-                System.out.println(users[i]);
-            }
-        }
+        System.out.println(MapType.get(userType));
     }
 }

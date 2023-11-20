@@ -4,42 +4,27 @@ import homework.onlineStore.model.Product;
 import homework.onlineStore.util.StorageSerializeUtil;
 
 import java.io.Serializable;
+import java.util.*;
 
 public class ProductStorage implements Serializable {
 
-    private Product[] products = new Product[10];
-
-    private int size;
+    private Set<Product> products = new HashSet<>();
+    Map<String, Product> MapId = new HashMap<>();
 
     public void add(Product product) {
-        if (products.length == size) {
-            extend();
-        }
-        products[size++] = product;
+        products.add(product);
+        MapId.put(product.getId(), product);
         StorageSerializeUtil.serializeProductStorage(this);
     }
 
     public Product getById(String id) {
-        for (int i = 0; i < size; i++) {
-            if (products[i].getId().equals(id) && !products[i].isRemoved()) {
-                return products[i];
-            }
-        }
-        return null;
+        Product product = MapId.get(id);
+        return product;
     }
 
     public void print() {
-        for (int i = 0; i < size; i++) {
-            if (!products[i].isRemoved()) {
-                System.out.println(products[i]);
-            }
+        for (Product product : products) {
+            System.out.println(product);
         }
     }
-
-    private void extend() {
-        Product[] tmp = new Product[products.length + 10];
-        System.arraycopy(products, 0, tmp, 0, products.length);
-        products = tmp;
-    }
-
 }
