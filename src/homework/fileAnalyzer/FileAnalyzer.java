@@ -74,13 +74,22 @@ public class FileAnalyzer {
 
     public static int countWordOccurrences(String path, String word) throws IOException {
         // Читаем файл, находим количество вхождений слова и возвращаем это число
+
         Map<String, Integer> stringIntegerMap = wordMap(path);
-        int value = 0;
-        for (Map.Entry<String, Integer> stringIntegerEntry : stringIntegerMap.entrySet()) {
-            if (stringIntegerEntry.getKey().equals(word)) {
-                value = stringIntegerEntry.getValue();
-            }
+        if (!stringIntegerMap.containsKey(word)){
+            return 0;
         }
-        return value;
+        return stringIntegerMap.get(word);
+
+
+//        Map<String, Integer> stringIntegerMap = wordMap(path);
+//        int value = 0;
+//        for (Map.Entry<String, Integer> stringIntegerEntry : stringIntegerMap.entrySet()) {
+//            if (stringIntegerEntry.getKey().equals(word)) {
+//                value = stringIntegerEntry.getValue();
+//            }
+//        }
+//        return value;
+
     }
 }
