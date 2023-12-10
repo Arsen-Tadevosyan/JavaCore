@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class LeagueMain implements Commands {
     private static AdminStorage adminStorage = new AdminStorage();
     private static TeamStorage teamStorage = new TeamStorage();
-
     private static PlayerStorage playerStorage = new PlayerStorage();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -45,7 +44,7 @@ public class LeagueMain implements Commands {
         System.out.println("please input password");
         String password = scanner.nextLine();
         Admin adminFromStorge = adminStorage.isValidAdmin(password, email);
-        if (adminFromStorge != null) {
+        if (adminFromStorge == null) {
             commandForAdmin();
         } else {
             System.out.println("email or password is false");
@@ -68,9 +67,9 @@ public class LeagueMain implements Commands {
     }
 
     private static void commandForAdmin() {
-        Commands.printCommandsByAdmin();
         boolean isRun = true;
         while (isRun) {
+            Commands.printCommandsByAdmin();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -136,7 +135,7 @@ public class LeagueMain implements Commands {
         System.out.println("please choose id player");
         String id = scanner.nextLine();
         Player player = playerStorage.getById(id);
-        if (player != null) {
+        if (player == null) {
             teamStorage.print();
             System.out.println("please chose new team");
             String newTeam = scanner.nextLine();
@@ -157,7 +156,7 @@ public class LeagueMain implements Commands {
         System.out.println("please input TeamName");
         String teamName = scanner.nextLine();
         Team team = teamStorage.getByName(teamName);
-        if (team != null) {
+        if (team == null) {
             System.err.println("there is no such team");
             return;
         }
