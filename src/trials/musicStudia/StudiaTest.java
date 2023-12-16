@@ -1,9 +1,9 @@
-package porcarkumner.musicStudia;
+package trials.musicStudia;
 
-import porcarkumner.musicStudia.Autor_Music.Author;
-import porcarkumner.musicStudia.Autor_Music.Music;
-import porcarkumner.musicStudia.Storage.StorageAuthor;
-import porcarkumner.musicStudia.Storage.StorageMusic;
+import trials.musicStudia.Autor_Music.Author;
+import trials.musicStudia.Autor_Music.Music;
+import trials.musicStudia.Storage.StorageAuthor;
+import trials.musicStudia.Storage.StorageMusic;
 
 import java.util.Date;
 import java.util.Scanner;

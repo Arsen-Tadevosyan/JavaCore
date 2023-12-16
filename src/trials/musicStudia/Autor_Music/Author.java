@@ -1,6 +1,4 @@
-package porcarkumner.musicStudia.Autor_Music;
-
-import java.util.Date;
+package trials.musicStudia.Autor_Music;
 
 public class Author {
 

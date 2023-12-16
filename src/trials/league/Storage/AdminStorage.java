@@ -1,6 +1,6 @@
-package porcarkumner.league.Storage;
+package trials.league.Storage;
 
-import porcarkumner.league.model.Admin;
+import trials.league.model.Admin;
 
 import java.util.ArrayList;
 import java.util.HashMap;

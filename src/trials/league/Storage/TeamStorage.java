@@ -1,6 +1,6 @@
-package porcarkumner.league.Storage;
+package trials.league.Storage;
 
-import porcarkumner.league.model.Team;
+import trials.league.model.Team;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package porcarkumner.musicStudia;
+package trials.musicStudia;
 
 public interface Command {
 

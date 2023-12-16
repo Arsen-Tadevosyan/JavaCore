@@ -1,7 +1,7 @@
-package porcarkumner.musicStudia.Storage;
+package trials.musicStudia.Storage;
 
-import porcarkumner.musicStudia.Autor_Music.Author;
-import porcarkumner.musicStudia.Autor_Music.Music;
+import trials.musicStudia.Autor_Music.Author;
+import trials.musicStudia.Autor_Music.Music;
 
 public class StorageMusic {
     Music[] musics = new Music[10];

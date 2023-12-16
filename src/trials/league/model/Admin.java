@@ -1,4 +1,4 @@
-package porcarkumner.league.model;
+package trials.league.model;
 
 public class Admin {
     private String email;

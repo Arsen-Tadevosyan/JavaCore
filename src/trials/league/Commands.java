@@ -1,4 +1,4 @@
-package porcarkumner.league;
+package trials.league;
 
 public interface Commands {
     String EXIT = "0";

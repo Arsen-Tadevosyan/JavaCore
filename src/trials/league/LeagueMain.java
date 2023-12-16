@@ -1,12 +1,12 @@
-package porcarkumner.league;
+package trials.league;
 
 import homework.onlineStore.util.IdGenerator;
-import porcarkumner.league.Storage.AdminStorage;
-import porcarkumner.league.Storage.PlayerStorage;
-import porcarkumner.league.Storage.TeamStorage;
-import porcarkumner.league.model.Admin;
-import porcarkumner.league.model.Player;
-import porcarkumner.league.model.Team;
+import trials.league.Storage.AdminStorage;
+import trials.league.Storage.PlayerStorage;
+import trials.league.Storage.TeamStorage;
+import trials.league.model.Admin;
+import trials.league.model.Player;
+import trials.league.model.Team;
 
 import java.util.Scanner;
 

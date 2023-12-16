@@ -1,4 +1,4 @@
-package porcarkumner;
+package trials;
 
 import java.util.Scanner;
 

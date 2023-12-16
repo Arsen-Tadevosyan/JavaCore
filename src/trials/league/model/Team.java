@@ -1,4 +1,4 @@
-package porcarkumner.league.model;
+package trials.league.model;
 
 import java.util.Objects;
 

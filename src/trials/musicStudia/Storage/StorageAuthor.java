@@ -1,6 +1,6 @@
-package porcarkumner.musicStudia.Storage;
+package trials.musicStudia.Storage;
 
-import porcarkumner.musicStudia.Autor_Music.Author;
+import trials.musicStudia.Autor_Music.Author;
 
 public class StorageAuthor {
 

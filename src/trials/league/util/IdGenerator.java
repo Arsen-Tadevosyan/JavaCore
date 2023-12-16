@@ -1,4 +1,4 @@
-package porcarkumner.league.util;
+package trials.league.util;
 
 import java.util.UUID;
 
