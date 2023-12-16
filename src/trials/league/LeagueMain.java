@@ -44,7 +44,7 @@ public class LeagueMain implements Commands {
         System.out.println("please input password");
         String password = scanner.nextLine();
         Admin adminFromStorge = adminStorage.isValidAdmin(password, email);
-        if (adminFromStorge == null) {
+        if (adminFromStorge != null) {
             commandForAdmin();
         } else {
             System.out.println("email or password is false");
@@ -57,7 +57,7 @@ public class LeagueMain implements Commands {
         System.out.println("please input password");
         String password = scanner.nextLine();
         Admin adminFromStorge = adminStorage.getByEmail(email);
-        if (adminFromStorge != null) {
+        if (adminFromStorge == null) {
             Admin admin = new Admin(email, password);
             adminStorage.add(admin);
             System.out.println("registered");
@@ -102,7 +102,7 @@ public class LeagueMain implements Commands {
 
     private static void changeManager() {
         teamStorage.print();
-        System.out.println("please chose new team");
+        System.out.println("please chose  team");
         String Team = scanner.nextLine();
         Team team = teamStorage.getByName(Team);
         if (team != null) {
@@ -117,7 +117,7 @@ public class LeagueMain implements Commands {
 
     private static void changePresident() {
         teamStorage.print();
-        System.out.println("please chose new team");
+        System.out.println("please chose  team");
         String Team = scanner.nextLine();
         Team team = teamStorage.getByName(Team);
         if (team != null) {
@@ -135,7 +135,7 @@ public class LeagueMain implements Commands {
         System.out.println("please choose id player");
         String id = scanner.nextLine();
         Player player = playerStorage.getById(id);
-        if (player == null) {
+        if (player != null) {
             teamStorage.print();
             System.out.println("please chose new team");
             String newTeam = scanner.nextLine();
