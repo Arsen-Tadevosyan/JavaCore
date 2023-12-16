@@ -1,4 +1,4 @@
-package porcarkumner.h;
+package porcarkumner;
 
 import java.util.Scanner;
 
